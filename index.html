@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A private, local-first workspace for understanding password strength, generating secure passwords, and assessing exposure."
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.pwnedpasswords.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <title>PassGuard — Your password security workspace</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <symbol id="i-shield" viewBox="0 0 24 24">
+          <path d="m12 3 8 3v6c0 4.5-4 7.5-8 9-4-1.5-8-4.5-8-9V6z" />
+          <path d="m8.5 12 2.5 2.5 4.5-5" />
+        </symbol>
+        <symbol id="i-grid" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="3" width="7" height="7" rx="1.5" />
+          <rect x="3" y="14" width="7" height="7" rx="1.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" />
+        </symbol>
+        <symbol id="i-scan" viewBox="0 0 24 24">
+          <path
+            d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3M7 12h10M12 7v10"
+          />
+        </symbol>
+        <symbol id="i-key" viewBox="0 0 24 24">
+          <circle cx="8" cy="8" r="5" />
+          <path d="m11.5 11.5 9 9M16 16l3-3m-1 5 3-3" />
+          <path d="M6.5 6.5h.01" />
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7z" /></symbol>
+        <symbol id="i-list" viewBox="0 0 24 24">
+          <rect x="4" y="3" width="16" height="18" rx="2" />
+          <path d="M10 8h6m-6 4h6m-6 4h6M7 8h.01M7 12h.01M7 16h.01" />
+        </symbol>
+        <symbol id="i-fingerprint" viewBox="0 0 24 24">
+          <path
+            d="M12 11c0 4-1 7-3 10M8 10c0-6 8-6 8 0 0 5-1 8-2 11M4 14v-4a8 8 0 0 1 16 0v2m-1 4-1 4M4 18l1-3m3-4c0 3-1 6-2 8"
+          />
+        </symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24">
+          <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5zM20 2v4m-2-2h4" />
+        </symbol>
+        <symbol id="i-file" viewBox="0 0 24 24">
+          <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+          <path d="M14 3v6h6M8 13h8m-8 4h6" />
+        </symbol>
+        <symbol id="i-book" viewBox="0 0 24 24">
+          <path d="M12 5C9 3 6 3 3 4v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1zm0 0v15" />
+        </symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24">
+          <rect x="5" y="10" width="14" height="11" rx="2" />
+          <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2" />
+        </symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6" /></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" /></symbol>
+        <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24">
+          <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12" />
+          <circle cx="12" cy="12" r="3" />
+        </symbol>
+        <symbol id="i-eye-off" viewBox="0 0 24 24">
+          <path
+            d="m3 3 18 18M10.6 5.1 12 5c6.5 0 10 7 10 7a19 19 0 0 1-3 3.8M6.2 6.2A20 20 0 0 0 2 12s3.5 7 10 7a12 12 0 0 0 5.8-1.5M10 10a3 3 0 0 0 4 4"
+          />
+        </symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" />
+        </symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24">
+          <path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10" />
+        </symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6" /></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></symbol>
+        <symbol id="i-info" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 11v6m0-10h.01" />
+        </symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24">
+          <path
+            d="m10.3 4-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3l-8-14a2 2 0 0 0-3.4 0M12 9v5m0 3h.01"
+          />
+        </symbol>
+        <symbol id="i-chart" viewBox="0 0 24 24">
+          <path d="M4 3v18h17M8 16v-4m5 4V8m5 8V5" />
+        </symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v5l3 2" />
+        </symbol>
+        <symbol id="i-refresh" viewBox="0 0 24 24">
+          <path d="M20 7v5h-5M4 17v-5h5" />
+          <path d="M5.5 7a7.5 7.5 0 0 1 12.4-2L20 8M4 16l2.1 3A7.5 7.5 0 0 0 18.5 17" />
+        </symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24">
+          <rect x="8" y="8" width="12" height="13" rx="2" />
+          <path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3" />
+        </symbol>
+        <symbol id="i-trash" viewBox="0 0 24 24">
+          <path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7" />
+        </symbol>
+        <symbol id="i-download" viewBox="0 0 24 24">
+          <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+        </symbol>
+        <symbol id="i-print" viewBox="0 0 24 24">
+          <path d="M6 8V3h12v5M6 17H3V8h18v9h-3M6 14h12v7H6zM17 11h.01" />
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" />
+          <ellipse cx="12" cy="12" rx="4" ry="9" />
+          <path d="M3 12h18" />
+        </symbol>
+        <symbol id="i-terminal" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="16" rx="2" />
+          <path d="m7 9 3 3-3 3m6 0h4" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+    <aside class="sidebar" id="sidebar" aria-label="Application sidebar">
+      <a href="#overview" class="brand" aria-label="PassGuard overview"
+        ><span class="brand-icon"
+          ><svg class="icon"><use href="#i-shield" /></svg></span
+        ><span>Pass<span class="brand-light">Guard</span><small>SECURITY WORKSPACE</small></span></a
+      >
+      <button id="sidebar-close" class="icon-button mobile-close" aria-label="Close navigation">
+        <svg class="icon"><use href="#i-close" /></svg>
+      </button>
+      <nav class="navigation" aria-label="Main navigation">
+        <p class="nav-label">WORKSPACE</p>
+        <a class="nav-item active" href="#overview" data-nav="overview" aria-current="page"
+          ><svg class="icon"><use href="#i-grid" /></svg><span>Overview</span></a
+        >
+        <a class="nav-item" href="#analyzer" data-nav="analyzer"
+          ><svg class="icon"><use href="#i-scan" /></svg><span>Password analyzer</span></a
+        >
+        <a class="nav-item" href="#generator" data-nav="generator"
+          ><svg class="icon"><use href="#i-key" /></svg><span>Password generator</span></a
+        >
+        <a class="nav-item" href="#resistance" data-nav="resistance"
+          ><svg class="icon"><use href="#i-bolt" /></svg><span>Attack resistance</span></a
+        >
+        <p class="nav-label nav-label-spaced">SECURITY CHECKS</p>
+        <a class="nav-item" href="#common" data-nav="common"
+          ><svg class="icon"><use href="#i-list" /></svg><span>Common passwords</span></a
+        >
+        <a class="nav-item" href="#breach" data-nav="breach"
+          ><svg class="icon"><use href="#i-fingerprint" /></svg><span>Breach exposure</span
+          ><span class="nav-dot" aria-hidden="true"></span
+        ></a>
+        <a class="nav-item" href="#recommendations" data-nav="recommendations"
+          ><svg class="icon"><use href="#i-spark" /></svg><span>Recommendations</span></a
+        >
+        <a class="nav-item" href="#report" data-nav="report"
+          ><svg class="icon"><use href="#i-file" /></svg><span>Security report</span></a
+        >
+        <p class="nav-label nav-label-spaced">RESOURCES</p>
+        <a class="nav-item" href="#tips" data-nav="tips"
+          ><svg class="icon"><use href="#i-book" /></svg><span>Security essentials</span></a
+        >
+        <a class="nav-item" href="#privacy" data-nav="privacy"
+          ><svg class="icon"><use href="#i-lock" /></svg><span>Privacy & limitations</span></a
+        >
+      </nav>
+      <div class="sidebar-bottom">
+        <a href="#privacy" class="privacy-card"
+          ><span class="privacy-icon"
+            ><svg class="icon"><use href="#i-shield" /></svg></span
+          ><strong>Private by design</strong>
+          <p>Your passwords stay yours.<br />No accounts. No tracking.</p>
+          <span class="privacy-link"
+            >Our privacy approach <svg class="icon"><use href="#i-arrow" /></svg></span
+        ></a>
+        <div class="sidebar-meta">
+          <span><i class="status-dot"></i> Local tools ready</span><span>v1.0.0</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button
+            id="sidebar-toggle"
+            class="icon-button mobile-menu"
+            aria-label="Open navigation"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <svg class="icon"><use href="#i-menu" /></svg></button
+          ><span class="breadcrumb-root">Workspace</span
+          ><svg class="icon breadcrumb-chevron"><use href="#i-chevron" /></svg
+          ><span id="breadcrumb-current">Overview</span>
+        </div>
+        <div class="topbar-actions">
+          <span class="local-badge"><i class="status-dot"></i> Local-first protection</span
+          ><span class="topbar-divider"></span
+          ><button
+            id="theme-toggle"
+            class="icon-button"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
+          >
+            <svg class="icon"><use href="#i-sun" /></svg></button
+          ><a class="icon-button topbar-help" href="#privacy" aria-label="Privacy and limitations"
+            ><svg class="icon"><use href="#i-info" /></svg
+          ></a>
+        </div>
+      </header>
+
+      <main id="main-content" tabindex="-1">
+        <noscript
+          ><div class="notice danger">
+            PassGuard needs JavaScript to perform local analysis. Enable JavaScript to use the
+            application. No password has been processed.
+          </div></noscript
+        >
+        <div id="stale-notice" class="notice warning stale-notice" role="status" hidden>
+          <svg class="icon"><use href="#i-alert" /></svg
+          ><span
+            >Password changed. Previous results are outdated and have been hidden. Analyze again for
+            a current assessment.</span
+          ><button class="button small" data-action="analyze">Analyze again</button>
+        </div>
+
+        <section class="view" id="view-overview" aria-labelledby="heading-overview">
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">YOUR PERSONAL SECURITY WORKSPACE</div>
+              <h1 id="heading-overview" tabindex="-1">
+                Security overview<span class="heading-dot">.</span>
+              </h1>
+              <p>A clear view of your password health. Private by default.</p>
+            </div>
+            <a href="#analyzer" class="button primary"
+              ><svg class="icon"><use href="#i-plus" /></svg> New assessment</a
+            >
+          </div>
+          <div id="dashboard-metrics" class="metrics-grid" aria-label="Assessment overview"></div>
+          <div class="overview-grid">
+            <article class="panel quick-analyzer">
+              <div class="panel-heading">
+                <div class="panel-title">
+                  <span class="icon-tile blue"
+                    ><svg class="icon"><use href="#i-scan" /></svg
+                  ></span>
+                  <div>
+                    <h2>How strong is your password?</h2>
+                    <p>Find the weak spots before someone else does.</p>
+                  </div>
+                </div>
+                <span class="badge neutral">LOCAL ANALYSIS</span>
+              </div>
+              <label for="dashboard-password" class="field-label">Password to assess</label>
+              <div class="password-field">
+                <svg class="icon field-icon"><use href="#i-lock" /></svg
+                ><input
+                  id="dashboard-password"
+                  data-password-input
+                  type="password"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  maxlength="1024"
+                  placeholder="Enter a password to get started"
+                  aria-describedby="dashboard-input-help"
+                /><button
+                  class="icon-button"
+                  data-toggle-password="dashboard-password"
+                  aria-label="Show password"
+                  aria-pressed="false"
+                >
+                  <svg class="icon"><use href="#i-eye" /></svg>
+                </button>
+              </div>
+              <div id="dashboard-input-help" class="input-help">
+                <span
+                  ><svg class="icon"><use href="#i-lock" /></svg> Processed on your device. Never
+                  stored.</span
+                ><span data-input-count>0 characters</span>
+              </div>
+              <div class="button-row">
+                <button class="button primary" data-action="analyze">
+                  <svg class="icon"><use href="#i-scan" /></svg> Analyze password
+                  <svg class="icon trailing-icon"><use href="#i-arrow" /></svg></button
+                ><button class="button ghost" data-action="reset">
+                  <svg class="icon"><use href="#i-refresh" /></svg> Reset
+                </button>
+              </div>
+              <div class="panel-bottom-note">
+                <svg class="icon"><use href="#i-info" /></svg
+                ><span
+                  >Educational insights, not a security guarantee.
+                  <a href="#privacy">Know the limits</a></span
+                >
+              </div>
+            </article>
+            <article class="panel assessment-panel">
+              <div class="panel-heading compact">
+                <h2>Assessment summary</h2>
+                <span id="summary-badge" class="badge neutral">NOT ANALYZED</span>
+              </div>
+              <div id="dashboard-summary"></div>
+            </article>
+          </div>
+          <div class="section-heading">
+            <div>
+              <h2>Your security toolkit</h2>
+              <p>Small steps. Stronger defenses.</p>
+            </div>
+            <span class="subtle-label">BUILT FOR BETTER HABITS</span>
+          </div>
+          <div class="toolkit-grid">
+            <a href="#generator" class="tool-card"
+              ><div class="tool-card-top">
+                <span class="icon-tile blue"
+                  ><svg class="icon"><use href="#i-key" /></svg></span
+                ><span class="badge positive" id="generator-status-badge">READY TO USE</span>
+              </div>
+              <h3>Make randomness work for you.</h3>
+              <p>Create unique passwords with cryptographically secure randomness.</p>
+              <span class="tool-link"
+                >Generate a password <svg class="icon"><use href="#i-arrow" /></svg></span
+            ></a>
+            <a href="#breach" class="tool-card"
+              ><div class="tool-card-top">
+                <span class="icon-tile purple"
+                  ><svg class="icon"><use href="#i-fingerprint" /></svg></span
+                ><span class="badge neutral" id="tool-breach-status">ON YOUR REQUEST</span>
+              </div>
+              <h3>Check your exposure.</h3>
+              <p>Check known breaches without sharing your password or full hash.</p>
+              <span class="tool-link"
+                >Check breach exposure <svg class="icon"><use href="#i-arrow" /></svg></span
+            ></a>
+            <a href="#report" class="tool-card"
+              ><div class="tool-card-top">
+                <span class="icon-tile teal"
+                  ><svg class="icon"><use href="#i-file" /></svg></span
+                ><span class="badge neutral" id="tool-report-status">AWAITING ANALYSIS</span>
+              </div>
+              <h3>Turn insight into action.</h3>
+              <p>Export a clear security assessment. Your password is never included.</p>
+              <span class="tool-link"
+                >View security report <svg class="icon"><use href="#i-arrow" /></svg></span
+            ></a>
+          </div>
+          <div class="overview-bottom">
+            <article class="panel compact-panel">
+              <div class="panel-heading compact">
+                <h2>
+                  <svg class="icon inline-icon"><use href="#i-spark" /></svg> Your next best steps
+                </h2>
+                <a href="#recommendations" class="text-link"
+                  >View all <svg class="icon"><use href="#i-arrow" /></svg
+                ></a>
+              </div>
+              <div id="dashboard-recommendations"></div>
+            </article>
+            <article class="tip-banner">
+              <span class="icon-tile blue"
+                ><svg class="icon"><use href="#i-book" /></svg
+              ></span>
+              <div>
+                <span class="eyebrow">THE SECURITY MINDSET</span>
+                <h3>Long. Unique. Unpredictable.</h3>
+                <p>
+                  A password manager and multi-factor authentication go further than a clever
+                  substitution.
+                </p>
+                <a href="#tips" class="text-link"
+                  >Explore security essentials <svg class="icon"><use href="#i-arrow" /></svg
+                ></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-analyzer" aria-labelledby="heading-analyzer" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">UNDERSTAND YOUR PASSWORD</div>
+              <h1 id="heading-analyzer" tabindex="-1">
+                Password analyzer<span class="heading-dot">.</span>
+              </h1>
+              <p>A transparent assessment of length, composition, and predictable patterns.</p>
+            </div>
+            <span class="privacy-tag"
+              ><svg class="icon"><use href="#i-lock" /></svg> On-device processing</span
+            >
+          </div>
+          <article class="panel analyzer-input-panel">
+            <div class="panel-heading">
+              <h2>Start an assessment</h2>
+              <button class="button small ghost" data-action="reset">
+                <svg class="icon"><use href="#i-trash" /></svg> Clear workspace
+              </button>
+            </div>
+            <label for="analyzer-password" class="field-label">Password to assess</label>
+            <div class="input-action-row">
+              <div class="password-field">
+                <svg class="icon field-icon"><use href="#i-lock" /></svg
+                ><input
+                  id="analyzer-password"
+                  data-password-input
+                  type="password"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  maxlength="1024"
+                  placeholder="Enter your password"
+                  aria-describedby="analyzer-input-help"
+                /><button
+                  class="icon-button"
+                  data-toggle-password="analyzer-password"
+                  aria-label="Show password"
+                  aria-pressed="false"
+                >
+                  <svg class="icon"><use href="#i-eye" /></svg>
+                </button>
+              </div>
+              <button class="button primary" data-action="analyze">
+                <svg class="icon"><use href="#i-scan" /></svg> Analyze password
+              </button>
+            </div>
+            <div class="input-help" id="analyzer-input-help">
+              <span
+                >No password storage, logs, or background requests. Maximum 1,024 UTF-16 code
+                units.</span
+              ><span data-input-count>0 characters</span>
+            </div>
+          </article>
+          <div id="analyzer-results" class="results-region" aria-live="polite"></div>
+          <div class="notice">
+            <svg class="icon"><use href="#i-info" /></svg
+            ><span
+              >The score is an educational heuristic, not a calibrated probability of compromise.
+              Long, unique, unpredictable passwords are the goal—not arbitrary complexity
+              rules.</span
+            >
+          </div>
+        </section>
+
+        <section class="view" id="view-generator" aria-labelledby="heading-generator" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">REPLACE PREDICTABILITY WITH RANDOMNESS</div>
+              <h1 id="heading-generator" tabindex="-1">
+                Password generator<span class="heading-dot">.</span>
+              </h1>
+              <p>Securely generated here. Never saved or sent anywhere.</p>
+            </div>
+            <span class="privacy-tag"
+              ><svg class="icon"><use href="#i-shield" /></svg> Web Crypto powered</span
+            >
+          </div>
+          <div class="two-column generator-layout">
+            <article class="panel">
+              <div class="panel-heading">
+                <h2>Make it your own</h2>
+                <span class="badge neutral">8–64 CHARACTERS</span>
+              </div>
+              <div class="range-heading">
+                <label for="generator-length" class="field-label">Password length</label
+                ><input
+                  id="generator-length-number"
+                  class="number-input"
+                  type="number"
+                  min="8"
+                  max="64"
+                  step="1"
+                  value="20"
+                  aria-label="Password length in characters"
+                />
+              </div>
+              <input
+                id="generator-length"
+                class="range-input"
+                type="range"
+                min="8"
+                max="64"
+                value="20"
+                aria-label="Password length slider"
+              />
+              <div class="range-labels"><span>8 characters</span><span>64 characters</span></div>
+              <h3 class="field-label categories-label">Included characters</h3>
+              <div class="category-options">
+                <label class="category-option"
+                  ><span><strong>A–Z</strong><span>Uppercase letters</span></span
+                  ><input type="checkbox" name="category" value="uppercase" checked /><span
+                    class="checkbox-mark"
+                    aria-hidden="true"
+                  ></span></label
+                ><label class="category-option"
+                  ><span><strong>a–z</strong><span>Lowercase letters</span></span
+                  ><input type="checkbox" name="category" value="lowercase" checked /><span
+                    class="checkbox-mark"
+                    aria-hidden="true"
+                  ></span></label
+                ><label class="category-option"
+                  ><span><strong>0–9</strong><span>Numbers</span></span
+                  ><input type="checkbox" name="category" value="digits" checked /><span
+                    class="checkbox-mark"
+                    aria-hidden="true"
+                  ></span></label
+                ><label class="category-option"
+                  ><span><strong>!@#</strong><span>Symbols</span></span
+                  ><input type="checkbox" name="category" value="special" checked /><span
+                    class="checkbox-mark"
+                    aria-hidden="true"
+                  ></span
+                ></label>
+              </div>
+              <button class="button primary full-width" data-action="generate">
+                <svg class="icon"><use href="#i-refresh" /></svg> Generate password
+              </button>
+              <p id="generator-error" class="field-error" role="alert" hidden></p>
+            </article>
+            <div class="stack">
+              <article class="panel generated-panel">
+                <div class="panel-heading">
+                  <h2>Your generated password</h2>
+                  <span class="icon-tile blue small-tile"
+                    ><svg class="icon"><use href="#i-key" /></svg
+                  ></span>
+                </div>
+                <label class="sr-only" for="generated-password">Generated password</label
+                ><textarea
+                  id="generated-password"
+                  class="generated-password"
+                  readonly
+                  spellcheck="false"
+                  autocomplete="off"
+                  rows="3"
+                  placeholder="A fresh start is one click away."
+                ></textarea>
+                <p id="generated-details" class="muted">
+                  Choose your settings, then generate a password.
+                </p>
+                <div class="button-row">
+                  <button class="button primary" data-action="copy-generated" disabled>
+                    <svg class="icon"><use href="#i-copy" /></svg> Copy password</button
+                  ><button class="button secondary" data-action="analyze-generated" disabled>
+                    <svg class="icon"><use href="#i-scan" /></svg> Analyze</button
+                  ><button
+                    class="icon-button bordered"
+                    data-action="clear-generated"
+                    disabled
+                    aria-label="Clear generated password"
+                    title="Clear generated password"
+                  >
+                    <svg class="icon"><use href="#i-trash" /></svg>
+                  </button>
+                </div>
+                <p id="clipboard-message" class="input-help" role="status"></p>
+              </article>
+              <article class="panel soft-panel">
+                <h3>
+                  <svg class="icon inline-icon"><use href="#i-shield" /></svg> Random by design
+                </h3>
+                <ul class="check-list">
+                  <li>Browser-native cryptographic randomness.</li>
+                  <li>At least one character from each enabled category.</li>
+                  <li>Unbiased selection and a secure shuffle.</li>
+                  <li>No insecure fallback. No automatic copying.</li>
+                </ul>
+                <p class="muted small-text">
+                  The clipboard is shared with other apps and may retain copied text. Save passwords
+                  in a trusted password manager, then clear your clipboard if needed.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="view-resistance" aria-labelledby="heading-resistance" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">UNDERSTAND THE ASSUMPTIONS</div>
+              <h1 id="heading-resistance" tabindex="-1">
+                Attack resistance<span class="heading-dot">.</span>
+              </h1>
+              <p>
+                Explore theoretical search space—not a prediction of when a password will be
+                cracked.
+              </p>
+            </div>
+            <a href="#analyzer" class="button secondary"
+              ><svg class="icon"><use href="#i-scan" /></svg> Analyze a password</a
+            >
+          </div>
+          <div id="resistance-results"></div>
+          <article class="panel scenario-settings">
+            <div class="panel-heading">
+              <div>
+                <h2>Hypothetical attack scenarios</h2>
+                <p>Illustrative rates. Not device benchmarks or universal measurements.</p>
+              </div>
+              <span class="badge warning">EDUCATIONAL MODEL</span>
+            </div>
+            <div id="scenario-controls" class="scenario-controls"></div>
+            <div class="button-row">
+              <button class="button secondary" data-action="update-rates">
+                <svg class="icon"><use href="#i-refresh" /></svg> Update assumptions</button
+              ><button class="button ghost" data-action="reset-rates">Restore example rates</button>
+            </div>
+            <p id="scenario-error" class="field-error" role="alert" hidden></p>
+            <p class="muted small-text">
+              Rates must be finite numbers from 0.001 to 10¹⁸ guesses/second. Changes apply when you
+              select “Update assumptions” and invalidate an existing report.
+            </p>
+          </article>
+          <div class="notice warning">
+            <svg class="icon"><use href="#i-alert" /></svg
+            ><span
+              >These durations assume uniformly random passwords and exhaustive search, with N/2
+              expected attempts. Real attackers try common passwords, dictionaries, and patterns
+              first. Rate limits, MFA, salts, hashing costs, hardware, and attacker knowledge all
+              change the outcome. No attack is executed.</span
+            >
+          </div>
+        </section>
+
+        <section class="view" id="view-common" aria-labelledby="heading-common" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">SPOT THE FAMILIAR PATTERNS</div>
+              <h1 id="heading-common" tabindex="-1">
+                Common password check<span class="heading-dot">.</span>
+              </h1>
+              <p>A small, local example list and the same pattern detector used by the analyzer.</p>
+            </div>
+            <span class="privacy-tag"
+              ><svg class="icon"><use href="#i-lock" /></svg> Entirely offline</span
+            >
+          </div>
+          <div class="two-column">
+            <article class="panel">
+              <div class="panel-heading">
+                <h2>Local list assessment</h2>
+                <svg class="icon muted"><use href="#i-list" /></svg>
+              </div>
+              <div id="common-results"></div>
+              <button class="button primary" data-action="local-check">
+                <svg class="icon"><use href="#i-scan" /></svg> Run local check
+              </button>
+              <p class="muted small-text">
+                Uses the current analyzed password. Also runs locally as part of every password
+                analysis.
+              </p>
+            </article>
+            <article class="panel soft-panel">
+              <span class="icon-tile purple"
+                ><svg class="icon"><use href="#i-info" /></svg
+              ></span>
+              <h2 class="spaced-title">A small list. An honest result.</h2>
+              <p>
+                This bundled list contains <strong data-local-list-size></strong> hand-curated
+                weak-password examples. Exact matches are case-sensitive; pattern warnings
+                separately inspect case variations, substitutions, sequences, and repetition.
+              </p>
+              <p>
+                “Not found in the local list” means just that. It does not prove a password is
+                unusual, unexposed, or safe.
+              </p>
+              <a href="#breach" class="text-link"
+                >Check known breach exposure <svg class="icon"><use href="#i-arrow" /></svg
+              ></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-breach" aria-labelledby="heading-breach" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">A PRIVATE CHECK. AN INFORMED NEXT STEP.</div>
+              <h1 id="heading-breach" tabindex="-1">
+                Breach exposure<span class="heading-dot">.</span>
+              </h1>
+              <p>Check the Pwned Passwords dataset using the official k-anonymity range API.</p>
+            </div>
+            <span class="privacy-tag"
+              ><svg class="icon"><use href="#i-globe" /></svg> Optional online check</span
+            >
+          </div>
+          <article class="panel breach-main">
+            <div class="panel-heading">
+              <div>
+                <h2>Has this password appeared in a breach?</h2>
+                <p>Uses your current analyzed password. No email or account lookup.</p>
+              </div>
+              <span class="icon-tile purple"
+                ><svg class="icon"><use href="#i-fingerprint" /></svg
+              ></span>
+            </div>
+            <div id="breach-results" aria-live="polite"></div>
+            <div class="breach-consent">
+              <svg class="icon"><use href="#i-info" /></svg>
+              <p>
+                Only clicking the button below makes a request to
+                <strong>api.pwnedpasswords.com</strong>. The service receives a five-character SHA-1
+                prefix, your IP address, and normal network metadata—not your password or complete
+                hash. Padded responses are requested.
+              </p>
+            </div>
+            <div class="button-row">
+              <button class="button primary" data-action="check-breach">
+                <svg class="icon"><use href="#i-fingerprint" /></svg
+                ><span>Check breach exposure</span></button
+              ><button class="button secondary" data-action="cancel-breach" hidden>
+                Cancel check</button
+              ><a href="#analyzer" class="button ghost"
+                >Back to analyzer <svg class="icon"><use href="#i-arrow" /></svg
+              ></a>
+            </div>
+            <p id="breach-capability" class="field-error" hidden></p>
+          </article>
+          <div class="protocol-grid">
+            <article class="panel">
+              <span class="step-number">01</span>
+              <h3>Hash on your device</h3>
+              <p>
+                Web Crypto calculates SHA-1 locally, solely for compatibility with this API—not for
+                storing passwords.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="step-number">02</span>
+              <h3>Share only the prefix</h3>
+              <p>
+                Only the first five hexadecimal characters are sent over HTTPS. The full hash stays
+                in temporary memory.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="step-number">03</span>
+              <h3>Compare locally</h3>
+              <p>
+                The returned suffixes are validated and compared here. An error is never reported as
+                a clean result.
+              </p>
+            </article>
+          </div>
+          <div class="notice">
+            <svg class="icon"><use href="#i-info" /></svg
+            ><span
+              >No match means no match in the checked dataset at the time of the check—not proof of
+              safety. A match does not identify your account. Never reuse an exposed password.
+              <a
+                href="https://haveibeenpwned.com/API/v3#PwnedPasswords"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Official API documentation ↗</a
+              ></span
+            >
+          </div>
+        </section>
+
+        <section
+          class="view"
+          id="view-recommendations"
+          aria-labelledby="heading-recommendations"
+          hidden
+        >
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">LESS GUESSWORK. BETTER HABITS.</div>
+              <h1 id="heading-recommendations" tabindex="-1">
+                Security recommendations<span class="heading-dot">.</span>
+              </h1>
+              <p>Practical next steps drawn from your current assessment.</p>
+            </div>
+            <a href="#generator" class="button primary"
+              ><svg class="icon"><use href="#i-key" /></svg> Generate a replacement</a
+            >
+          </div>
+          <div id="recommendation-results"></div>
+          <div class="section-heading">
+            <div>
+              <h2>Always worth doing</h2>
+              <p>Strong account security goes beyond any one password.</p>
+            </div>
+          </div>
+          <div class="protocol-grid">
+            <article class="panel">
+              <span class="icon-tile blue"
+                ><svg class="icon"><use href="#i-key" /></svg
+              ></span>
+              <h3 class="spaced-title">Use a password manager</h3>
+              <p>
+                Generate and save unique passwords instead of memorizing small variations. Protect
+                the vault with a strong master passphrase.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="icon-tile teal"
+                ><svg class="icon"><use href="#i-shield" /></svg
+              ></span>
+              <h3 class="spaced-title">Add a second factor</h3>
+              <p>
+                Prefer passkeys or phishing-resistant security keys where available. Otherwise, an
+                authenticator app is a useful additional layer.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="icon-tile purple"
+                ><svg class="icon"><use href="#i-fingerprint" /></svg
+              ></span>
+              <h3 class="spaced-title">Keep every account unique</h3>
+              <p>
+                A breach elsewhere should not unlock your email, bank, or work. Replace reused or
+                exposed passwords promptly.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-report" aria-labelledby="heading-report" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">TAKE YOUR INSIGHTS WITH YOU</div>
+              <h1 id="heading-report" tabindex="-1">
+                Security report<span class="heading-dot">.</span>
+              </h1>
+              <p>A clear, local assessment. No password. No complete hash. No upload.</p>
+            </div>
+            <button class="button primary" data-action="generate-report">
+              <svg class="icon"><use href="#i-file" /></svg> Generate report
+            </button>
+          </div>
+          <div class="report-toolbar panel">
+            <div class="toolbar-label">
+              <svg class="icon"><use href="#i-file" /></svg
+              ><span id="report-status">No report generated</span>
+            </div>
+            <div class="button-row">
+              <button class="button small secondary" data-action="export-html" disabled>
+                <svg class="icon"><use href="#i-download" /></svg> HTML</button
+              ><button class="button small secondary" data-action="export-text" disabled>
+                <svg class="icon"><use href="#i-download" /></svg> Text</button
+              ><button class="button small secondary" data-action="print-report" disabled>
+                <svg class="icon"><use href="#i-print" /></svg> Print / PDF</button
+              ><button
+                class="icon-button"
+                data-action="clear-report"
+                disabled
+                aria-label="Clear report"
+                title="Clear report"
+              >
+                <svg class="icon"><use href="#i-trash" /></svg>
+              </button>
+            </div>
+          </div>
+          <div id="report-placeholder" class="panel"></div>
+          <div id="report-preview" class="report-preview" hidden></div>
+          <div class="notice report-notice">
+            <svg class="icon"><use href="#i-lock" /></svg
+            ><span
+              >Reports contain security statistics, not credentials. They still reveal password
+              characteristics; handle exported files thoughtfully. A report is cleared when the
+              password, assessment, breach result, or applied attack assumptions change.</span
+            >
+          </div>
+        </section>
+
+        <section class="view" id="view-tips" aria-labelledby="heading-tips" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">GOOD SECURITY STARTS WITH UNDERSTANDING</div>
+              <h1 id="heading-tips" tabindex="-1">
+                Security essentials<span class="heading-dot">.</span>
+              </h1>
+              <p>Simple principles for a more resilient digital life.</p>
+            </div>
+            <a href="#analyzer" class="button secondary"
+              >Put it into practice <svg class="icon"><use href="#i-arrow" /></svg
+            ></a>
+          </div>
+          <div class="tips-grid">
+            <article class="panel">
+              <span class="tip-number">01 / LENGTH</span>
+              <h2>Give guessing a longer job.</h2>
+              <p>
+                Length expands the theoretical search space exponentially. Aim for at least 16
+                randomly generated characters where supported, or a long passphrase made from
+                independently selected random words.
+              </p>
+              <p class="muted small-text">
+                A familiar quote or a repeated word is not a random passphrase. A large score is not
+                proof of randomness.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="tip-number">02 / UNIQUENESS</span>
+              <h2>One account. One password.</h2>
+              <p>
+                Reused passwords enable credential stuffing: attackers try leaked credentials on
+                other services. Even a very strong password should never be reused across accounts.
+              </p>
+              <p class="muted small-text">
+                Give your primary email and password manager special care. They are recovery
+                gateways to other accounts.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="tip-number">03 / RANDOMNESS</span>
+              <h2>Predictable is still predictable.</h2>
+              <p>
+                Capitalizing the first letter, swapping a letter for a familiar symbol, or adding a
+                year is well known to attackers. Character variety cannot rescue an obvious base
+                word.
+              </p>
+              <a href="#generator" class="text-link"
+                >Create a random alternative <svg class="icon"><use href="#i-arrow" /></svg
+              ></a>
+            </article>
+            <article class="panel">
+              <span class="tip-number">04 / LAYERS</span>
+              <h2>Do not stop at a password.</h2>
+              <p>
+                Enable multi-factor authentication. Prefer a passkey or security key where possible,
+                and keep recovery codes somewhere safe. Never share verification codes with
+                unsolicited callers.
+              </p>
+              <p class="muted small-text">
+                MFA helps reduce account takeover risk; it does not make password reuse safe.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="tip-number">05 / PHISHING</span>
+              <h2>Check the destination.</h2>
+              <p>
+                A convincing login screen can still be fraudulent. Check the domain, avoid
+                unexpected sign-in links, and use a password manager's domain-aware autofill.
+              </p>
+              <p class="muted small-text">
+                A secure-looking padlock only indicates an encrypted connection, not an honest site.
+              </p>
+            </article>
+            <article class="panel">
+              <span class="tip-number">06 / RESPONSE</span>
+              <h2>Act on exposure, not on fear.</h2>
+              <p>
+                If a password is exposed or reused, replace it on every affected account. Review
+                active sessions, recovery settings, and MFA. A dataset count is not the number of
+                your compromised accounts.
+              </p>
+              <a href="#breach" class="text-link"
+                >Understand the exposure check <svg class="icon"><use href="#i-arrow" /></svg
+              ></a>
+            </article>
+          </div>
+          <article class="panel faq-panel">
+            <h2>A few useful distinctions</h2>
+            <details>
+              <summary>Is entropy the same as password strength?</summary>
+              <p>
+                No. The length × log₂(pool size) formula assumes independent, uniformly random
+                character choices. Human patterns violate that assumption. PassGuard reports
+                theoretical entropy separately from its pattern-aware educational score.
+              </p>
+            </details>
+            <details>
+              <summary>Why do the estimated crack times look so large?</summary>
+              <p>
+                Exhaustive search considers every combination, while real attackers prioritize
+                likely guesses. A common word with a numeric suffix can be guessed early even when
+                the theoretical search space is enormous. Hardware, hash design, rate limits, and
+                MFA also matter.
+              </p>
+            </details>
+            <details>
+              <summary>Should I change a good password on a fixed schedule?</summary>
+              <p>
+                Prioritize changing passwords when they are exposed, reused, suspected compromised,
+                or required by your organization. Choose a genuinely unique replacement rather than
+                a predictable increment.
+              </p>
+            </details>
+          </article>
+        </section>
+
+        <section class="view" id="view-privacy" aria-labelledby="heading-privacy" hidden>
+          <div class="page-heading">
+            <div>
+              <div class="eyebrow">TRANSPARENCY, NOT PROMISES</div>
+              <h1 id="heading-privacy" tabindex="-1">
+                Privacy & limitations<span class="heading-dot">.</span>
+              </h1>
+              <p>
+                Know exactly what runs here, what leaves your device, and what the results mean.
+              </p>
+            </div>
+            <span class="privacy-tag"
+              ><svg class="icon"><use href="#i-lock" /></svg> No account required</span
+            >
+          </div>
+          <article class="panel privacy-intro">
+            <span class="icon-tile teal"
+              ><svg class="icon"><use href="#i-shield" /></svg
+            ></span>
+            <div>
+              <h2>Your password is not our data.</h2>
+              <p>
+                Analysis, generation, local checks, estimates, and reports run in your browser.
+                There is no application backend, analytics, tracking, database, or persistent
+                password storage. Theme and scenario preferences are also memory-only.
+              </p>
+            </div>
+          </article>
+          <article class="panel">
+            <h2>Data boundaries</h2>
+            <div class="table-wrap">
+              <table class="data-table">
+                <caption class="sr-only">
+                  Data used and external requests by feature
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Where it runs</th>
+                    <th>What leaves your device</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Password analysis & local checks</td>
+                    <td>Your browser</td>
+                    <td>Nothing</td>
+                  </tr>
+                  <tr>
+                    <td>Password generation</td>
+                    <td>Your browser / Web Crypto</td>
+                    <td>Nothing</td>
+                  </tr>
+                  <tr>
+                    <td>Attack estimates & reports</td>
+                    <td>Your browser</td>
+                    <td>Nothing; downloads are user-initiated</td>
+                  </tr>
+                  <tr>
+                    <td>Optional breach check</td>
+                    <td>Local hashing + Pwned Passwords API</td>
+                    <td>5-character SHA-1 prefix, IP, normal network metadata</td>
+                  </tr>
+                  <tr>
+                    <td>Copy password</td>
+                    <td>System clipboard, with permission</td>
+                    <td>Shared clipboard may be accessible to other apps</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <div class="two-column privacy-details">
+            <article class="panel">
+              <h2>How sensitive data is handled</h2>
+              <ul class="detail-list">
+                <li>
+                  Passwords and hashes never go to localStorage, sessionStorage, IndexedDB, cookies,
+                  URLs, or logs.
+                </li>
+                <li>
+                  Typing, analyzing, opening sections, and generating passwords never initiate
+                  external requests.
+                </li>
+                <li>
+                  Breach checks require an explicit click, use HTTPS with response padding, omit
+                  credentials and referrers, and time out after 10 seconds.
+                </li>
+                <li>
+                  Input changes invalidate assessments and cancel in-flight checks. Reset clears all
+                  sensitive UI and application state.
+                </li>
+                <li>
+                  Reports exclude password strings and hashes. HTML output is escaped and generated
+                  locally.
+                </li>
+                <li>There are no third-party scripts, fonts, CDNs, or runtime dependencies.</li>
+              </ul>
+            </article>
+            <article class="panel">
+              <h2>Important limitations</h2>
+              <ul class="detail-list">
+                <li>
+                  The score is a documented educational heuristic, not a guarantee or
+                  industry-certified measure.
+                </li>
+                <li>
+                  The dictionary and local list are intentionally small and English-centric;
+                  sophisticated patterns can be missed.
+                </li>
+                <li>
+                  Entropy and exhaustive-search time assume uniformly random characters. They can
+                  hugely overestimate human-created passwords.
+                </li>
+                <li>
+                  Attack rates are hypothetical. Password hashing costs, hardware, salts, MFA, and
+                  attacker knowledge vary.
+                </li>
+                <li>
+                  A negative breach result applies only to the checked dataset. A failed check is
+                  not a negative result.
+                </li>
+                <li>
+                  Browser extensions, malware, screenshots, clipboard history, and an untrusted host
+                  can still expose credentials.
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div class="notice warning">
+            <svg class="icon"><use href="#i-alert" /></svg
+            ><span
+              >Use synthetic passwords for demonstrations. Clearing JavaScript references is
+              best-effort: the browser controls memory reclamation, and PassGuard cannot guarantee
+              forensic erasure or clear previously exported files and copied clipboard contents.
+              Page exit also clears in-app sensitive state where browser lifecycle events run.</span
+            >
+          </div>
+        </section>
+        <footer class="workspace-footer">
+          <span
+            ><svg class="icon"><use href="#i-shield" /></svg> Better passwords. Better peace of
+            mind.</span
+          ><span
+            >Made to inform, not to intrude. <span class="footer-separator">/</span> PassGuard
+            1.0</span
+          >
+        </footer>
+      </main>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  </body>
+</html>

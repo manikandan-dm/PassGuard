@@ -1,0 +1,22 @@
+# OPTIONAL TEMPLATE ONLY: not installed or enabled by the project.
+# Confirm `command -v node` and change /usr/bin/node if using a version manager.
+# Change the project path if it is not ~/Downloads/passguard.
+[Unit]
+Description=PassGuard local static server
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Downloads/passguard
+ExecStart=/usr/bin/node "%h/Downloads/passguard/scripts/dev-server.mjs" --host 127.0.0.1 --port 3000 --require-new --no-open
+Restart=on-failure
+RestartSec=5
+# A conflicting application/externally managed PassGuard should not loop/retry.
+RestartPreventExitStatus=73
+KillSignal=SIGINT
+TimeoutStopSec=10
+UMask=0077
+
+[Install]
+WantedBy=default.target

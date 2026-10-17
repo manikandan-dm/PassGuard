@@ -1,0 +1,1034 @@
+@media (min-width: 1600px) {
+  :root {
+    --sidebar-width: 258px;
+  }
+  .sidebar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .nav-item.active:before {
+    left: -21px;
+  }
+  #main-content {
+    padding-top: 43px;
+  }
+  .page-heading {
+    margin-bottom: 33px;
+  }
+  .overview-grid {
+    grid-template-columns: 1.55fr 1fr;
+  }
+  .quick-analyzer {
+    padding: 27px;
+  }
+  .quick-analyzer .panel-heading {
+    margin-bottom: 32px;
+  }
+  .tool-card {
+    padding: 24px;
+  }
+}
+@media (max-width: 1180px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+  .sidebar {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .nav-item {
+    font-size: 11px;
+    gap: 9px;
+    padding: 10px;
+  }
+  .brand {
+    font-size: 22px;
+    padding-left: 8px;
+  }
+  .nav-item.active:before {
+    left: -13px;
+  }
+  .topbar {
+    padding: 0 26px;
+  }
+  #main-content {
+    padding: 29px 26px 0;
+  }
+  .overview-grid {
+    grid-template-columns: 1.35fr 1fr;
+  }
+  .quick-analyzer,
+  .assessment-panel {
+    padding: 20px;
+  }
+  .quick-analyzer .panel-heading .badge {
+    display: none;
+  }
+  .panel-title {
+    gap: 9px;
+  }
+  .panel-title h2 {
+    font-size: 13px;
+  }
+  .panel-title p {
+    font-size: 9px;
+  }
+  .metric-card {
+    padding: 17px 15px;
+  }
+  .metric-label {
+    font-size: 10px;
+  }
+  .metric-value.text-value {
+    font-size: 16px;
+  }
+  .tool-card {
+    padding: 18px;
+  }
+  .tool-card .badge {
+    font-size: 7px;
+    letter-spacing: 0.3px;
+  }
+  .tool-card h3 {
+    font-size: 11px;
+  }
+  .tool-card p {
+    font-size: 10px;
+  }
+  .overview-bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+  .character-grid {
+    gap: 6px;
+  }
+  .character-stat {
+    padding: 14px 4px;
+  }
+  .character-stat span {
+    font-size: 8px;
+  }
+  .analysis-grid {
+    grid-template-columns: 1fr 1.4fr;
+  }
+  .privacy-tag {
+    font-size: 9px;
+  }
+  .page-heading {
+    gap: 14px;
+  }
+  .page-heading h1 {
+    font-size: 27px;
+  }
+  .page-heading p {
+    font-size: 11px;
+  }
+  .page-heading > .button {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (max-width: 980px) {
+  .overview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .metrics-grid {
+    gap: 11px;
+  }
+  .metric-card {
+    padding: 15px 12px;
+  }
+  .metric-value {
+    font-size: 23px;
+  }
+  .metric-value.text-value {
+    font-size: 15px;
+  }
+  .metric-foot {
+    font-size: 8px;
+  }
+  .metric-top {
+    gap: 5px;
+  }
+  .metric-label {
+    font-size: 9px;
+  }
+  .metric-top .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .quick-analyzer .panel-title .icon-tile {
+    display: none;
+  }
+  .quick-analyzer .input-help {
+    display: block;
+  }
+  .quick-analyzer .input-help [data-input-count] {
+    display: none;
+  }
+  .toolkit-grid {
+    gap: 12px;
+  }
+  .tool-card-top .badge {
+    display: none;
+  }
+  .tool-card {
+    padding: 17px;
+  }
+  .overview-bottom {
+    grid-template-columns: 1fr;
+  }
+  .tip-banner {
+    align-items: center;
+  }
+  .tip-banner p {
+    max-width: none;
+  }
+  .workspace-footer {
+    font-size: 8px;
+  }
+  .footer-separator {
+    padding: 0 5px;
+  }
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+  .character-grid {
+    gap: 12px;
+  }
+  .character-stat span {
+    font-size: 10px;
+  }
+  .character-grid {
+    margin-top: 10px;
+  }
+  .two-column {
+    gap: 18px;
+  }
+  .generator-layout {
+    grid-template-columns: 1fr;
+  }
+  .two-column:not(.generator-layout) {
+    grid-template-columns: 1fr;
+  }
+  .protocol-grid {
+    gap: 12px;
+  }
+  .protocol-grid > .panel {
+    padding: 18px;
+  }
+  .protocol-grid h3 {
+    font-size: 12px;
+  }
+  .protocol-grid p {
+    font-size: 10px;
+  }
+  .input-action-row {
+    flex-wrap: wrap;
+  }
+  .input-action-row .password-field {
+    flex-basis: 100%;
+  }
+  .page-heading > .privacy-tag {
+    display: none;
+  }
+  .estimate-metrics {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .estimate-metrics .metric-value {
+    font-size: 18px;
+  }
+  .report-toolbar {
+    flex-wrap: wrap;
+  }
+  .report-preview {
+    padding: 25px;
+  }
+  .report-header h2 {
+    font-size: 21px;
+  }
+  .report-stamp {
+    min-width: 120px;
+  }
+  .scenario-controls {
+    grid-template-columns: 1fr;
+  }
+  .tips-grid {
+    gap: 15px;
+  }
+  .tips-grid > .panel {
+    padding: 21px;
+  }
+  .tips-grid h2 {
+    font-size: 16px;
+  }
+  .tips-grid p {
+    font-size: 11px;
+  }
+}
+@media (max-width: 760px) {
+  :root {
+    --sidebar-width: 242px;
+  }
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    padding: 24px 17px 0;
+  }
+  .sidebar.is-open {
+    transform: translateX(0);
+  }
+  .sidebar .brand {
+    margin-bottom: 28px;
+  }
+  .sidebar .mobile-close {
+    display: flex !important;
+    position: absolute;
+    right: 9px;
+    top: 8px;
+    width: 27px;
+    height: 27px;
+    background: var(--sidebar);
+  }
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: #0009;
+    z-index: 35;
+    backdrop-filter: blur(2px);
+  }
+  .navigation .nav-item {
+    font-size: 12px;
+    padding: 11px 13px;
+    gap: 12px;
+  }
+  .navigation .nav-item.active:before {
+    left: -18px;
+  }
+  .sidebar-meta {
+    font-size: 9px;
+  }
+  .workspace {
+    margin-left: 0;
+  }
+  .topbar {
+    height: 64px;
+    padding: 0 22px;
+    position: sticky;
+    top: 0;
+    z-index: 25;
+    background: var(--bg);
+  }
+  .mobile-menu {
+    display: flex !important;
+  }
+  .topbar-left {
+    gap: 9px;
+  }
+  .topbar-left > .mobile-menu {
+    margin-left: -7px;
+    margin-right: 5px;
+  }
+  .topbar-actions {
+    gap: 10px;
+  }
+  .topbar-divider {
+    display: none;
+  }
+  .local-badge {
+    font-size: 9px;
+  }
+  .topbar-help {
+    display: none;
+  }
+  .topbar-actions .icon-button {
+    width: 30px;
+    height: 30px;
+  }
+  #main-content {
+    padding: 27px 22px 0;
+  }
+  .page-heading {
+    margin-bottom: 25px;
+  }
+  .page-heading h1 {
+    font-size: 28px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+  .page-heading p {
+    font-size: 11px;
+  }
+  .overview-grid {
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .quick-analyzer .panel-title .icon-tile {
+    display: flex;
+  }
+  .quick-analyzer .panel-title {
+    gap: 9px;
+  }
+  .quick-analyzer .panel-heading {
+    margin-bottom: 26px;
+  }
+  .panel-title h2 {
+    font-size: 12px;
+  }
+  .panel-title p {
+    font-size: 9px;
+  }
+  .metrics-grid {
+    gap: 12px;
+  }
+  .metric-card {
+    padding: 17px 14px;
+  }
+  .metric-label {
+    font-size: 10px;
+  }
+  .metric-value.text-value {
+    font-size: 16px;
+  }
+  .metric-foot {
+    font-size: 8px;
+  }
+  .tool-card h3 {
+    font-size: 11px;
+  }
+  .overview-bottom {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .compact-panel {
+    padding: 19px;
+  }
+  .tip-banner {
+    padding: 20px;
+    gap: 11px;
+  }
+  .tip-banner > .icon-tile {
+    display: none;
+  }
+  .tip-banner p {
+    font-size: 9px;
+  }
+  .tip-banner h3 {
+    font-size: 12px;
+  }
+  .tip-banner .text-link {
+    font-size: 9px;
+  }
+  .workspace-footer {
+    font-size: 8px;
+  }
+  .generator-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .generator-layout > .panel,
+  .generator-layout .panel {
+    padding: 20px;
+  }
+  .generated-password {
+    font-size: 18px;
+  }
+  .generated-panel .button {
+    font-size: 10px;
+    padding: 9px 11px;
+  }
+  .generated-panel .button-row {
+    gap: 7px;
+  }
+  .protocol-grid > .panel {
+    padding: 20px;
+  }
+  .analysis-grid {
+    grid-template-columns: 1fr 1.5fr;
+  }
+  .analysis-grid > .panel {
+    padding: 20px;
+  }
+  .character-grid {
+    gap: 5px;
+    margin: 20px 0;
+  }
+  .character-stat {
+    padding: 12px 4px;
+  }
+  .character-stat span {
+    font-size: 8px;
+  }
+  .character-stat strong {
+    font-size: 20px;
+  }
+  .entropy-strip {
+    align-items: flex-start;
+  }
+  .entropy-strip p {
+    max-width: 200px;
+    font-size: 9px;
+  }
+  .category-indicator {
+    font-size: 9px;
+    padding: 4px 6px;
+  }
+  .scenario-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+  .report-toolbar {
+    flex-wrap: nowrap;
+  }
+  .report-toolbar .button-row {
+    gap: 6px;
+  }
+  .report-toolbar .button.small {
+    padding: 6px 9px;
+  }
+  .toolbar-label {
+    font-size: 10px;
+  }
+  .report-preview {
+    padding: 25px;
+  }
+  .report-header h2 {
+    font-size: 20px;
+  }
+  .notice {
+    font-size: 10px;
+  }
+  .stale-notice {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .stale-notice .button {
+    margin-left: 27px;
+  }
+  .privacy-details {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .detail-list {
+    font-size: 10px;
+  }
+  .privacy-details .panel {
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  #main-content {
+    padding: 24px 17px 0;
+  }
+  .topbar {
+    padding: 0 17px;
+  }
+  .breadcrumb-root {
+    display: none;
+  }
+  .breadcrumb-chevron {
+    display: none;
+  }
+  .topbar-left {
+    font-size: 11px;
+  }
+  .local-badge {
+    font-size: 8px;
+    gap: 5px;
+  }
+  .topbar-actions {
+    gap: 9px;
+  }
+  .page-heading {
+    align-items: flex-start;
+    gap: 13px;
+    flex-wrap: wrap;
+  }
+  .page-heading h1 {
+    font-size: 26px;
+  }
+  .page-heading p {
+    font-size: 11px;
+    line-height: 1.8;
+    max-width: 340px;
+  }
+  .page-heading > .button {
+    font-size: 10px;
+    padding: 9px 11px;
+    min-height: 37px;
+  }
+  .page-heading > .button .icon {
+    width: 13px;
+    height: 13px;
+  }
+  .page-heading > .button {
+    margin-top: 0;
+  }
+  .page-heading:has(> .privacy-tag) {
+    display: block;
+  }
+  .eyebrow {
+    font-size: 7px;
+    letter-spacing: 1.1px;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .metric-card {
+    padding: 17px;
+  }
+  .metric-top {
+    margin-bottom: 13px;
+  }
+  .metric-value.text-value {
+    font-size: 18px;
+  }
+  .metric-value {
+    font-size: 26px;
+  }
+  .metric-foot {
+    font-size: 9px;
+  }
+  .metric-label {
+    font-size: 10px;
+  }
+  .metric-top .icon {
+    width: 16px;
+    height: 16px;
+  }
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .quick-analyzer {
+    padding: 22px;
+  }
+  .quick-analyzer .panel-title .icon-tile {
+    display: flex;
+  }
+  .quick-analyzer .panel-title h2 {
+    font-size: 14px;
+  }
+  .quick-analyzer .panel-title p {
+    font-size: 10px;
+  }
+  .quick-analyzer .input-help {
+    display: flex;
+    font-size: 9px;
+  }
+  .quick-analyzer .input-help [data-input-count] {
+    display: block;
+    font-size: 8px;
+  }
+  .quick-analyzer .panel-heading {
+    margin-bottom: 23px;
+  }
+  .assessment-panel {
+    padding: 22px;
+  }
+  .assessment-panel #dashboard-summary {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    gap: 0 17px;
+  }
+  .assessment-panel .score-visual {
+    width: 140px;
+    height: 140px;
+    grid-row: 1/3;
+    margin: 0;
+  }
+  .assessment-panel .score-ring {
+    width: 136px;
+    height: 136px;
+    inset: 0;
+  }
+  .assessment-panel .score-center strong {
+    font-size: 28px;
+  }
+  .summary-caption {
+    text-align: left;
+    margin: 0;
+    max-width: none;
+    padding: 12px 0;
+  }
+  .summary-caption h3 {
+    font-size: 13px;
+  }
+  .summary-caption p {
+    font-size: 10px;
+  }
+  .summary-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 9px;
+    margin-top: 5px;
+    padding-top: 12px;
+    gap: 4px;
+  }
+  .summary-footer .text-link {
+    font-size: 10px;
+  }
+  .section-heading {
+    margin: 26px 0 16px;
+  }
+  .subtle-label {
+    display: none;
+  }
+  .toolkit-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .tool-card {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 0 14px;
+  }
+  .tool-card-top {
+    grid-column: 1;
+    grid-row: 1/4;
+    display: block;
+    margin: 0;
+  }
+  .tool-card-top .badge {
+    display: none;
+  }
+  .tool-card h3 {
+    font-size: 13px;
+    grid-column: 2;
+    margin-bottom: 6px;
+  }
+  .tool-card p {
+    font-size: 10px;
+    max-width: none;
+    grid-column: 2;
+  }
+  .tool-link {
+    grid-column: 2;
+    font-size: 10px;
+    padding-top: 11px;
+    margin-top: 13px;
+  }
+  .tool-link .icon {
+    margin-left: auto;
+  }
+  .overview-bottom {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  .compact-panel {
+    padding: 21px;
+  }
+  .compact-panel .panel-heading h2 {
+    font-size: 12px;
+  }
+  .next-step {
+    font-size: 11px;
+    margin: 11px 0;
+  }
+  .tip-banner {
+    padding: 21px;
+    gap: 15px;
+  }
+  .tip-banner > .icon-tile {
+    display: flex;
+  }
+  .tip-banner p {
+    font-size: 10px;
+  }
+  .tip-banner h3 {
+    font-size: 13px;
+  }
+  .tip-banner .text-link {
+    font-size: 10px;
+  }
+  .workspace-footer {
+    margin-top: 27px;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    font-size: 8px;
+    padding: 20px 0 24px;
+  }
+  .panel {
+    padding: 21px;
+  }
+  .analyzer-input-panel .panel-heading {
+    gap: 9px;
+  }
+  .analyzer-input-panel .panel-heading > .button {
+    font-size: 9px;
+    padding: 5px 7px;
+  }
+  .analyzer-input-panel .panel-heading h2 {
+    font-size: 14px;
+  }
+  .input-action-row {
+    gap: 12px;
+  }
+  .input-action-row > .button {
+    width: 100%;
+  }
+  .input-help {
+    align-items: flex-start;
+    font-size: 9px;
+    gap: 9px;
+  }
+  .input-help > span:first-child {
+    align-items: flex-start;
+  }
+  .input-help [data-input-count] {
+    white-space: nowrap;
+  }
+  .analysis-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .character-grid {
+    gap: 7px;
+  }
+  .character-stat {
+    padding: 13px 5px;
+  }
+  .character-stat span {
+    font-size: 8px;
+  }
+  .entropy-strip p {
+    font-size: 10px;
+    max-width: 230px;
+  }
+  .two-column {
+    gap: 16px;
+  }
+  .generator-layout {
+    grid-template-columns: 1fr;
+  }
+  .generated-password {
+    font-size: 20px;
+  }
+  .generated-panel .button {
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+  .generator-layout .panel {
+    padding: 23px;
+  }
+  .protocol-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .protocol-grid .panel {
+    padding: 22px;
+  }
+  .protocol-grid p {
+    font-size: 11px;
+  }
+  .protocol-grid h3 {
+    font-size: 14px;
+  }
+  .step-number {
+    margin-bottom: 12px;
+  }
+  .estimate-metrics {
+    grid-template-columns: 1fr;
+  }
+  .estimate-metrics .metric-card {
+    padding: 18px;
+  }
+  .estimate-metrics .metric-value {
+    font-size: 22px;
+  }
+  .estimate-metrics .metric-top {
+    margin-bottom: 13px;
+  }
+  .risk-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .scenario-controls {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .scenario-settings .panel-heading {
+    align-items: flex-start;
+  }
+  .scenario-settings .panel-heading .badge {
+    display: none;
+  }
+  .data-table {
+    font-size: 10px;
+    min-width: 500px;
+  }
+  .data-table th {
+    font-size: 8px;
+  }
+  .data-table td {
+    padding: 14px 13px 14px 0;
+  }
+  .data-table td p {
+    font-size: 9px;
+  }
+  .check-result {
+    padding: 18px;
+  }
+  .check-result h3 {
+    font-size: 16px;
+  }
+  .breach-main .panel-heading h2 {
+    font-size: 15px;
+  }
+  .breach-main .panel-heading > .icon-tile {
+    display: none;
+  }
+  .breach-main .button-row .primary {
+    width: 100%;
+  }
+  .breach-main .button-row > a {
+    font-size: 10px;
+  }
+  .tips-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .tips-grid > .panel {
+    padding: 23px;
+  }
+  .tips-grid h2 {
+    font-size: 18px;
+  }
+  .tips-grid p {
+    font-size: 12px;
+  }
+  .privacy-intro {
+    gap: 12px;
+  }
+  .privacy-intro > .icon-tile {
+    width: 32px;
+    height: 32px;
+  }
+  .privacy-intro h2 {
+    font-size: 15px;
+  }
+  .privacy-intro p {
+    font-size: 11px;
+  }
+  .privacy-details {
+    grid-template-columns: 1fr !important;
+  }
+  .detail-list {
+    font-size: 11px;
+  }
+  .report-toolbar {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px;
+  }
+  .report-toolbar .button-row {
+    gap: 8px;
+    width: 100%;
+  }
+  .report-toolbar .button.small {
+    font-size: 10px;
+    flex: 1;
+  }
+  .report-toolbar .icon-button {
+    width: 28px;
+    flex-shrink: 0;
+  }
+  .report-preview {
+    padding: 22px 18px;
+  }
+  .report-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .report-stamp {
+    text-align: left;
+  }
+  .report-header h2 {
+    font-size: 21px;
+  }
+  .report-section dl {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+  .report-section dd {
+    margin-bottom: 8px;
+  }
+  .report-document {
+    font-size: 11px;
+  }
+  .report-section h3 {
+    font-size: 13px;
+  }
+  .toast {
+    bottom: 17px;
+    right: 17px;
+    left: 17px;
+    max-width: none;
+    font-size: 11px;
+    padding: 13px 16px;
+  }
+  .notice {
+    padding: 14px;
+    font-size: 10px;
+    gap: 8px;
+  }
+  .notice > .icon {
+    width: 15px;
+    height: 15px;
+  }
+  .stale-notice .button {
+    margin-left: 23px;
+  }
+  .page-heading:has(> button[data-action='generate-report']) {
+    flex-wrap: wrap;
+  }
+  .page-heading > button[data-action='generate-report'] {
+    margin-top: 0;
+  }
+}
+@media (max-width: 360px) {
+  .page-heading h1 {
+    font-size: 24px;
+  }
+  .page-heading > .button {
+    font-size: 9px;
+    padding: 9px;
+  }
+  .quick-analyzer .panel-title h2 {
+    font-size: 12px;
+  }
+  .quick-analyzer .panel-title p {
+    font-size: 9px;
+  }
+  .quick-analyzer .input-help [data-input-count] {
+    display: none;
+  }
+  .assessment-panel #dashboard-summary {
+    grid-template-columns: 120px 1fr;
+    gap: 10px;
+  }
+  .assessment-panel .score-visual {
+    width: 120px;
+    height: 120px;
+  }
+  .assessment-panel .score-ring {
+    width: 120px;
+    height: 120px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  .generated-panel .button {
+    padding: 9px 11px;
+  }
+  .character-grid {
+    gap: 4px;
+  }
+  .character-stat span {
+    font-size: 7px;
+  }
+}

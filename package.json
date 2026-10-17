@@ -1,0 +1,24 @@
+{
+  "name": "passguard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local-first password strength and security assessment workspace.",
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs",
+    "test": "node --test tests/*.test.js",
+    "test:server": "node --test tests/dev-server.test.js",
+    "test:browser": "node tests/browser-smoke.mjs",
+    "test:firefox": "PASSGUARD_BROWSER=firefox node tests/browser-smoke.mjs",
+    "start:open": "node scripts/dev-server.mjs --open",
+    "test:local": "node --test tests/dev-server.test.js tests/local-startup.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "playwright": "1.64.1"
+  }
+}

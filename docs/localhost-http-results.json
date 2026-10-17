@@ -1,0 +1,241 @@
+{
+  "runAt": "2026-10-17T12:03:42.234Z",
+  "target": "http://localhost:3000",
+  "environment": "Arena Linux sandbox, not the user's Kali machine",
+  "previewBinding": "0.0.0.0 explicitly selected for the hosted verification preview; normal local defaults are 127.0.0.1:3000",
+  "baselineNativeTests": 77,
+  "legacyReuse": {
+    "checkedAt": "2026-10-17T11:52:19.722Z",
+    "status": "passguard",
+    "recognition": "exact-legacy-homepage"
+  },
+  "repeatedStartup": {
+    "shell": true,
+    "npmStart": true,
+    "npmDev": true,
+    "allReusedSameListener": true,
+    "listenerUnchanged": true,
+    "headlessBrowserOpeningSkipped": true
+  },
+  "identity": {
+    "application": "PassGuard",
+    "service": "local-static",
+    "protocol": 1
+  },
+  "previewHostStatus": 200,
+  "defaultPortPolicy": "Fixed 3000; foreign listener fails with exit 73, no automatic fallback or process killing",
+  "runtimeHttpFiles": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "51566c73dfbaed0b8f12fb047602fe51ebc17d5fc83c8cec590e9a5746fd4125",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "css/print.css",
+      "status": 200,
+      "mime": "text/css; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "f386c6083cc721ab5b3ae5a504873259bca365ec4696ddcea9510e392874e292",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "css/responsive.css",
+      "status": 200,
+      "mime": "text/css; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "6a7b0548df24d0e29695e999c02dd7f20a8c4539f9a5cfc1bfb7a7c7bc58c587",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "css/style.css",
+      "status": 200,
+      "mime": "text/css; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "c1788f5218d9f28229d6613039eabc85fe8151bd48e0b7b2d4a4c529884f8a5d",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/analyzer.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "d72df89f802e90fb04153f8f05fe93cf8565df682aa33d5984c0afcab897f1be",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/app.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "b523686d13d1c86aa6db29bd922315a37273e117b256e77e014fdd57853e460c",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/attack-estimator.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "43829a03401678eca5b8fda7a66d2255de08fc3c894a982252130605c3cb47d7",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/breach-checker.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "e2878c37d9a7921bceeac2d70d4b5cefa904472b08ac5983e5b3b7338d8d3a57",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/character-analysis.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "4c6fab5f00dbcf6e816651f10829dc4d0d52f21d472eb0cf18e9afb9b90e8698",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/clipboard.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "a668f3a7c7910b6070b63ff06521f044e46fc300c1c07167c2856a536b29d679",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/common-password-checker.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "67506520d8a4bd7efbb5833389168e09b4bd204a49f436a4a92230db709cf566",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/crack-time-estimator.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "a547ea635d75e8ec734d244ca73a865ad35126cb32c7413726146ce086aa74a6",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/entropy-calculator.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "b14af058ad04d9342a1e27b05fd0c01b1c564765689cb405a04ccd2121d3d506",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/formatters.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "7f43126543703a23a815868f70768f618a2285f5ee3c91bbb2f814c985dd888b",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/password-generator.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "8e1475ce8308ac299d7759ac56249dd86803987949f7260418033172055f9008",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/password-validation.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "a79308c9de68344a6796d922f29d35285000f271a30eafa5ea9ef59ce571c126",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/recommendations.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "7dfd662149a3fe7687163fb6c3f0eafbb02aa3b0ccf13164106f08ff6dd1cbe0",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/report-export.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "dbab9566b512cedfbb53e533acec016ffcad723f57df4be1b54539d9f0940ea6",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/risk-indicators.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "af6c91012432f0394cffda33683fbc43c5cdb5d68bc0ac70fa3bd7827e7a7752",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/security-report.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "a031391c393a4fd85d147fa21be53f58ef93ae9bc533beb7f69bc952eaaeaea6",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/state.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "d23c90591395df7650f79fabc82e605b3eafb53ee29f892f39ddc4590f261caf",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/strength-score.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "26e78b741dcd1022a5feb70a90f7b94624ccda163eef6a5273e8d0007c20ade0",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/ui.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "bafd1ebbbd8bbefb45ffefd61c4261413994355dbca8254723dac67e3e1e40fc",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "js/weakness-detector.js",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "byteIdentical": true,
+      "sha256": "ed5b557dd61fcca51c657a4dd6c13ce6891af941492f9548e84fa168b80d81e6",
+      "unchangedFromBaseline": true
+    },
+    {
+      "file": "assets/favicon.svg",
+      "status": 200,
+      "mime": "image/svg+xml",
+      "byteIdentical": true,
+      "sha256": "d2bfdc1169092ff942b2d3ad910f0d9485a4f26e719056bca3a9a7ae0d717cb7",
+      "unchangedFromBaseline": true
+    }
+  ],
+  "packageLockUnchanged": true,
+  "manualOnly": [
+    "Real Windows OS",
+    "Real GUI tab/permission dialogs",
+    "User systemd login cycle",
+    "Actual user Kali files/profile"
+  ],
+  "syntaxCheck": {
+    "javascriptModules": 31,
+    "shellSyntaxValid": true
+  },
+  "additionalCoverage": "Disabled-IPv6 error mapping is simulated in a native unit test; real IPv6-only foreign listener detection also passed on this Linux host."
+}

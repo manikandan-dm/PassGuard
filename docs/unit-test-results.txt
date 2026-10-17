@@ -1,0 +1,509 @@
+
+> passguard@1.0.0 test
+> node --test tests/*.test.js
+
+TAP version 13
+# Subtest: empty input is rejected, empty character statistics and entropy are zero
+ok 1 - empty input is rejected, empty character statistics and entropy are zero
+  ---
+  duration_ms: 1.485225
+  ...
+# Subtest: length, control-character, and input-type validation
+ok 2 - length, control-character, and input-type validation
+  ---
+  duration_ms: 0.210584
+  ...
+# Subtest: weak, medium, and strong fixtures use the same score thresholds
+ok 3 - weak, medium, and strong fixtures use the same score thresholds
+  ---
+  duration_ms: 12.379114
+  ...
+# Subtest: character counts and category presence are accurate
+ok 4 - character counts and category presence are accurate
+  ---
+  duration_ms: 1.02074
+  ...
+# Subtest: Unicode code points are counted, with an explicit entropy proxy
+ok 5 - Unicode code points are counted, with an explicit entropy proxy
+  ---
+  duration_ms: 0.776626
+  ...
+# Subtest: entropy uses only observed ASCII pools
+ok 6 - entropy uses only observed ASCII pools
+  ---
+  duration_ms: 0.226697
+  ...
+# Subtest: sequential runs work in both directions
+ok 7 - sequential runs work in both directions
+  ---
+  duration_ms: 0.750991
+  ...
+# Subtest: keyboard, repetition, repeated sections, and repeated words are detected
+ok 8 - keyboard, repetition, repeated sections, and repeated words are detected
+  ---
+  duration_ms: 21.461165
+  ...
+# Subtest: predictable substitutions and word-plus-number combinations do not get strong scores
+ok 9 - predictable substitutions and word-plus-number combinations do not get strong scores
+  ---
+  duration_ms: 0.703815
+  ...
+# Subtest: long repetition does not receive excessive length credit
+ok 10 - long repetition does not receive excessive length credit
+  ---
+  duration_ms: 0.422491
+  ...
+# Subtest: exact local matches are separate from heuristic warnings
+ok 11 - exact local matches are separate from heuristic warnings
+  ---
+  duration_ms: 9.417505
+  ...
+# Subtest: analysis results contain no synthetic credential or extracted fragments
+ok 12 - analysis results contain no synthetic credential or extracted fragments
+  ---
+  duration_ms: 0.346602
+  ...
+# Subtest: well-known published passphrases do not receive a strong score
+ok 13 - well-known published passphrases do not receive a strong score
+  ---
+  duration_ms: 0.238564
+  ...
+# Subtest: search-space and expected-attempt logs are distinct and mathematically correct
+ok 14 - search-space and expected-attempt logs are distinct and mathematically correct
+  ---
+  duration_ms: 37.498246
+  ...
+# Subtest: all four scenarios reuse the same expected attempts
+ok 15 - all four scenarios reuse the same expected attempts
+  ---
+  duration_ms: 10.390868
+  ...
+# Subtest: large values never produce Infinity or NaN
+ok 16 - large values never produce Infinity or NaN
+  ---
+  duration_ms: 2.314479
+  ...
+# Subtest: duration conversion handles readable units and subsecond values
+ok 17 - duration conversion handles readable units and subsecond values
+  ---
+  duration_ms: 0.336094
+  ...
+# Subtest: scenario rates are configurable and validated
+ok 18 - scenario rates are configurable and validated
+  ---
+  duration_ms: 1.060222
+  ...
+# Subtest: dictionary risk recognizes predictable strings regardless of search-space size
+ok 19 - dictionary risk recognizes predictable strings regardless of search-space size
+  ---
+  duration_ms: 0.526363
+  ...
+# Subtest: successful exposure sends exactly a five-character prefix, never plaintext or a full hash
+ok 20 - successful exposure sends exactly a five-character prefix, never plaintext or a full hash
+  ---
+  duration_ms: 59.312044
+  ...
+# Subtest: a validated successful response without a suffix match is negative
+ok 21 - a validated successful response without a suffix match is negative
+  ---
+  duration_ms: 13.325107
+  ...
+# Subtest: padding zero records, case-insensitive suffixes, and large counts are handled
+ok 22 - padding zero records, case-insensitive suffixes, and large counts are handled
+  ---
+  duration_ms: 0.302002
+  ...
+# Subtest: network and non-200 responses are failures, never negative results
+ok 23 - network and non-200 responses are failures, never negative results
+  ---
+  duration_ms: 4.353405
+  ...
+# Subtest: malformed responses fail closed even if a valid match appeared earlier
+ok 24 - malformed responses fail closed even if a valid match appeared earlier
+  ---
+  duration_ms: 12.051376
+  ...
+# Subtest: unexpected content type or oversized body is rejected
+ok 25 - unexpected content type or oversized body is rejected
+  ---
+  duration_ms: 17.31555
+  ...
+# Subtest: timeouts work even if a fetch implementation does not observe abort
+ok 26 - timeouts work even if a fetch implementation does not observe abort
+  ---
+  duration_ms: 15.993325
+  ...
+# Subtest: body-read failures and stalled bodies cannot become negative
+ok 27 - body-read failures and stalled bodies cannot become negative
+  ---
+  duration_ms: 15.754564
+  ...
+# Subtest: cancellation aborts and unavailable hashing does not issue a request
+ok 28 - cancellation aborts and unavailable hashing does not issue a request
+  ---
+  duration_ms: 0.383336
+  ...
+# Subtest: hashing failures do not transmit anything
+ok 29 - hashing failures do not transmit anything
+  ---
+  duration_ms: 0.307627
+  ...
+# Subtest: missing fetch and invalid digest length fail before any request
+ok 30 - missing fetch and invalid digest length fail before any request
+  ---
+  duration_ms: 0.258246
+  ...
+# Subtest: a timeout during local hashing cannot later send a prefix
+ok 31 - a timeout during local hashing cannot later send a prefix
+  ---
+  duration_ms: 11.078258
+  ...
+# Subtest: localhost defaults are loopback with fixed port 3000 and no dependency on Python
+ok 32 - localhost defaults are loopback with fixed port 3000 and no dependency on Python
+  ---
+  duration_ms: 1.488608
+  ...
+# Subtest: explicit environment and CLI ports are strict and CLI options override environment values
+ok 33 - explicit environment and CLI ports are strict and CLI options override environment values
+  ---
+  duration_ms: 0.393113
+  ...
+# Subtest: invalid ports, hosts, and unknown or incomplete options fail without echoing input
+ok 34 - invalid ports, hosts, and unknown or incomplete options fail without echoing input
+  ---
+  duration_ms: 0.865492
+  ...
+# Subtest: homepage and every current runtime asset are served from the project root with correct MIME
+ok 35 - homepage and every current runtime asset are served from the project root with correct MIME
+  ---
+  duration_ms: 180.820317
+  ...
+# Subtest: HEAD preserves content headers without a body and query strings do not change assets
+ok 36 - HEAD preserves content headers without a body and query strings do not change assets
+  ---
+  duration_ms: 10.706562
+  ...
+# Subtest: favicon aliases serve the existing SVG and preview Host headers are accepted
+ok 37 - favicon aliases serve the existing SVG and preview Host headers are accepted
+  ---
+  duration_ms: 15.699145
+  ...
+# Subtest: missing assets and directory paths return 404, not a misleading HTML fallback
+ok 38 - missing assets and directory paths return 404, not a misleading HTML fallback
+  ---
+  duration_ms: 8.701031
+  ...
+# Subtest: private configuration, tests, docs, scripts and node_modules are not exposed
+ok 39 - private configuration, tests, docs, scripts and node_modules are not exposed
+  ---
+  duration_ms: 7.596763
+  ...
+# Subtest: encoded traversal, backslashes, null bytes and malformed encodings fail closed
+ok 40 - encoded traversal, backslashes, null bytes and malformed encodings fail closed
+  ---
+  duration_ms: 6.961989
+  ...
+# Subtest: symlinks cannot escape the project or expose private files within it
+ok 41 - symlinks cannot escape the project or expose private files within it
+  ---
+  duration_ms: 23.126033
+  ...
+# Subtest: unsupported request bodies are rejected; request paths and body text never enter logs
+ok 42 - unsupported request bodies are rejected; request paths and body text never enter logs
+  ---
+  duration_ms: 4.49564
+  ...
+# Subtest: occupied-port fallback prints only the URL of a successfully bound listener
+ok 43 - occupied-port fallback prints only the URL of a successfully bound listener
+  ---
+  duration_ms: 13.167779
+  ...
+# Subtest: explicit occupied ports fail instead of silently choosing another port
+ok 44 - explicit occupied ports fail instead of silently choosing another port
+  ---
+  duration_ms: 3.792847
+  ...
+# Subtest: CLI serves the script-relative root from another working directory and stops on Ctrl+C
+ok 45 - CLI serves the script-relative root from another working directory and stops on Ctrl+C
+  ---
+  duration_ms: 102.70457
+  ...
+# Subtest: CLI help works and invalid settings fail without printing untrusted values
+ok 46 - CLI help works and invalid settings fail without printing untrusted values
+  ---
+  duration_ms: 175.358841
+  ...
+# Subtest: npm dev/start share the zero-dependency launcher and targeted tests are configured
+ok 47 - npm dev/start share the zero-dependency launcher and targeted tests are configured
+  ---
+  duration_ms: 1.093813
+  ...
+# Subtest: generated lengths and selected-category requirements hold across 200 outputs
+ok 48 - generated lengths and selected-category requirements hold across 200 outputs
+  ---
+  duration_ms: 95.523861
+  ...
+# Subtest: every nonempty subset of categories is honored, without unselected characters
+ok 49 - every nonempty subset of categories is honored, without unselected characters
+  ---
+  duration_ms: 2.675799
+  ...
+# Subtest: rejection sampling discards biased tail values instead of applying modulo
+ok 50 - rejection sampling discards biased tail values instead of applying modulo
+  ---
+  duration_ms: 0.19845
+  ...
+# Subtest: invalid generator settings and unavailable crypto fail closed
+ok 51 - invalid generator settings and unavailable crypto fail closed
+  ---
+  duration_ms: 0.721901
+  ...
+# Subtest: clipboard success is reported only after a successful write
+ok 52 - clipboard success is reported only after a successful write
+  ---
+  duration_ms: 0.187767
+  ...
+# Subtest: clipboard denied, missing, and empty states return actionable failures
+ok 53 - clipboard denied, missing, and empty states return actionable failures
+  ---
+  duration_ms: 0.603523
+  ...
+# Subtest: startup flags enable optional browser opening and supervisor-only ownership without changing server arguments
+ok 54 - startup flags enable optional browser opening and supervisor-only ownership without changing server arguments
+  ---
+  duration_ms: 1.63709
+  ...
+# Subtest: read-only server identity supports GET/HEAD and reveals no root, PID or credential data
+ok 55 - read-only server identity supports GET/HEAD and reveals no root, PID or credential data
+  ---
+  duration_ms: 26.819783
+  ...
+# Subtest: disabled IPv6 does not falsely block IPv4 startup; reset/permission/unknown listeners remain conflicts
+ok 56 - disabled IPv6 does not falsely block IPv4 startup; reset/permission/unknown listeners remain conflicts
+  ---
+  duration_ms: 0.251138
+  ...
+# Subtest: free local ports are classified available
+ok 57 - free local ports are classified available
+  ---
+  duration_ms: 4.643174
+  ...
+# Subtest: running current PassGuard is identified without starting another server
+ok 58 - running current PassGuard is identified without starting another server
+  ---
+  duration_ms: 6.066276
+  ...
+# Subtest: legacy PassGuard is recognized only by exact local homepage bytes, not an HTML title
+ok 59 - legacy PassGuard is recognized only by exact local homepage bytes, not an HTML title
+  ---
+  duration_ms: 7.354498
+  ...
+# Subtest: another app named PassGuard is not mistaken for this project
+ok 60 - another app named PassGuard is not mistaken for this project
+  ---
+  duration_ms: 8.290482
+  ...
+# Subtest: malformed/wrong identity JSON is not trusted
+ok 61 - malformed/wrong identity JSON is not trusted
+  ---
+  duration_ms: 13.016305
+  ...
+# Subtest: startup probes never follow redirects
+ok 62 - startup probes never follow redirects
+  ---
+  duration_ms: 9.255725
+  ...
+# Subtest: silent/non-HTTP listeners time out safely instead of being treated as free
+ok 63 - silent/non-HTTP listeners time out safely instead of being treated as free
+  ---
+  duration_ms: 62.304363
+  ...
+# Subtest: oversized identity responses are bounded and do not become PassGuard
+ok 64 - oversized identity responses are bounded and do not become PassGuard
+  ---
+  duration_ms: 2.734502
+  ...
+# Subtest: probe targets are restricted to validated local addresses and ports
+ok 65 - probe targets are restricted to validated local addresses and ports
+  ---
+  duration_ms: 0.715222
+  ...
+# Subtest: localhost startup detects an IPv6-only foreign listener as a conflict
+ok 66 - localhost startup detects an IPv6-only foreign listener as a conflict
+  ---
+  duration_ms: 35.749811
+  ...
+# Subtest: idempotent local startup creates one loopback listener and reuses it thereafter
+ok 67 - idempotent local startup creates one loopback listener and reuses it thereafter
+  ---
+  duration_ms: 22.674469
+  ...
+# Subtest: a foreign application is left untouched and produces an explicit CLI conflict (exit 73)
+ok 68 - a foreign application is left untouched and produces an explicit CLI conflict (exit 73)
+  ---
+  duration_ms: 81.669013
+  ...
+# Subtest: second CLI startup exits successfully without owning or stopping the original instance
+ok 69 - second CLI startup exits successfully without owning or stopping the original instance
+  ---
+  duration_ms: 58.271453
+  ...
+# Subtest: supervised require-new mode refuses to adopt another process and never kills it
+ok 70 - supervised require-new mode refuses to adopt another process and never kills it
+  ---
+  duration_ms: 126.131502
+  ...
+# Subtest: two simultaneous cold CLI starts converge to one server and one successful reuse
+ok 71 - two simultaneous cold CLI starts converge to one server and one successful reuse
+  ---
+  duration_ms: 149.539766
+  ...
+# Subtest: Linux shell launcher works from another cwd/path with spaces, overrides inherited bind defaults, reuses, stops and restarts
+ok 72 - Linux shell launcher works from another cwd/path with spaces, overrides inherited bind defaults, reuses, stops and restarts
+  ---
+  duration_ms: 460.2538
+  ...
+# Subtest: OS wrappers and optional service are quoted, local-only by default, and do not install packages
+ok 73 - OS wrappers and optional service are quoted, local-only by default, and do not install packages
+  ---
+  duration_ms: 1.656498
+  ...
+# Subtest: browser commands are native OS helpers, optional in headless/CI, and reject remote/credential URLs
+ok 74 - browser commands are native OS helpers, optional in headless/CI, and reject remote/credential URLs
+  ---
+  duration_ms: 0.632375
+  ...
+# Subtest: browser opening uses argv without a shell, falls back safely, and never becomes a server dependency
+ok 75 - browser opening uses argv without a shell, falls back safely, and never becomes a server dependency
+  ---
+  duration_ms: 5.903053
+  ...
+# Subtest: reports contain actual available results and honestly label unchecked exposure
+ok 76 - reports contain actual available results and honestly label unchecked exposure
+  ---
+  duration_ms: 46.062734
+  ...
+# Subtest: exposure match, negative, error and unknown labels are accurate
+ok 77 - exposure match, negative, error and unknown labels are accurate
+  ---
+  duration_ms: 1.738115
+  ...
+# Subtest: HTML, text, and preview never include the synthetic password or full hash
+ok 78 - HTML, text, and preview never include the synthetic password or full hash
+  ---
+  duration_ms: 8.884181
+  ...
+# Subtest: every dynamic HTML surface escapes injected report fields
+ok 79 - every dynamic HTML surface escapes injected report fields
+  ---
+  duration_ms: 5.557731
+  ...
+# Subtest: download creates a local blob with safe filename and no upload
+ok 80 - download creates a local blob with safe filename and no upload
+  ---
+  duration_ms: 1.727463
+  ...
+# Subtest: print calls the native print operation only for a generated report
+ok 81 - print calls the native print operation only for a generated report
+  ---
+  duration_ms: 1.473843
+  ...
+# Subtest: initial state contains no fabricated results
+ok 82 - initial state contains no fabricated results
+  ---
+  duration_ms: 0.448788
+  ...
+# Subtest: changing a password hides old analysis and invalidates exposure and report
+ok 83 - changing a password hides old analysis and invalidates exposure and report
+  ---
+  duration_ms: 10.497317
+  ...
+# Subtest: returning to an earlier value still requires an explicit new analysis
+ok 84 - returning to an earlier value still requires an explicit new analysis
+  ---
+  duration_ms: 2.982122
+  ...
+# Subtest: late API results cannot apply after input changes, cancellation, reset, or re-analysis
+ok 85 - late API results cannot apply after input changes, cancellation, reset, or re-analysis
+  ---
+  duration_ms: 0.769223
+  ...
+# Subtest: a pending check cannot be represented as a completed report
+ok 86 - a pending check cannot be represented as a completed report
+  ---
+  duration_ms: 0.291974
+  ...
+# Subtest: scenario changes and local checks invalidate an existing report
+ok 87 - scenario changes and local checks invalidate an existing report
+  ---
+  duration_ms: 12.710066
+  ...
+# Subtest: reset clears password, generated output, assessment, exposure, and report
+ok 88 - reset clears password, generated output, assessment, exposure, and report
+  ---
+  duration_ms: 0.59668
+  ...
+# Subtest: clearing only a report leaves the current assessment available
+ok 89 - clearing only a report leaves the current assessment available
+  ---
+  duration_ms: 0.598502
+  ...
+# Subtest: generation revision remains monotonic across reset to reject old clipboard callbacks
+ok 90 - generation revision remains monotonic across reset to reject old clipboard callbacks
+  ---
+  duration_ms: 0.254629
+  ...
+# Subtest: unchanged input does not invalidate a current result
+ok 91 - unchanged input does not invalidate a current result
+  ---
+  duration_ms: 1.520578
+  ...
+# Subtest: invalid scenario settings preserve the last applied assumptions
+ok 92 - invalid scenario settings preserve the last applied assumptions
+  ---
+  duration_ms: 0.682026
+  ...
+# Subtest: required application and documentation files exist and are nonempty
+ok 93 - required application and documentation files exist and are nonempty
+  ---
+  duration_ms: 6.432846
+  ...
+# Subtest: all ES-module imports resolve locally and no runtime package is required
+ok 94 - all ES-module imports resolve locally and no runtime package is required
+  ---
+  duration_ms: 30.770287
+  ...
+# Subtest: HTML assets and all ten navigation views are linked correctly
+ok 95 - HTML assets and all ten navigation views are linked correctly
+  ---
+  duration_ms: 3.651842
+  ...
+# Subtest: runtime source never logs, persists credentials, or uses insecure randomness
+ok 96 - runtime source never logs, persists credentials, or uses insecure randomness
+  ---
+  duration_ms: 11.470948
+  ...
+# Subtest: only the breach module has a network call and the endpoint is HTTPS range-only
+ok 97 - only the breach module has a network call and the endpoint is HTTPS range-only
+  ---
+  duration_ms: 13.839112
+  ...
+# Subtest: CSP, no inline handlers, and self-contained local styling reduce injection/dependency risk
+ok 98 - CSP, no inline handlers, and self-contained local styling reduce injection/dependency risk
+  ---
+  duration_ms: 7.825587
+  ...
+# Subtest: every declared application button action has a wired handler
+ok 99 - every declared application button action has a wired handler
+  ---
+  duration_ms: 1.956284
+  ...
+1..99
+# tests 99
+# suites 0
+# pass 99
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4180.706419

@@ -1,0 +1,116 @@
+/* Browser print: only an explicitly generated report is printed. */
+@page {
+  margin: 16mm;
+  size: auto;
+}
+:root {
+  color-scheme: light;
+  --text: #182237;
+  --muted: #45516a;
+  --muted-2: #52617b;
+  --blue: #315fc1;
+  --border: #ced6e5;
+  --blue-soft: #f1f4fc;
+}
+body {
+  background: white !important;
+  color: #182237;
+  font-family: Arial, sans-serif;
+  font-size: 10pt;
+}
+body > .svg-definitions,
+.sidebar,
+.topbar,
+.workspace-footer,
+.page-heading,
+.report-toolbar,
+.report-notice,
+.skip-link,
+.toast,
+.stale-notice,
+#report-placeholder,
+noscript {
+  display: none !important;
+}
+.workspace {
+  margin: 0;
+  display: block;
+  min-height: 0;
+}
+#main-content {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+.view {
+  display: none !important;
+}
+body.print-ready #view-report {
+  display: block !important;
+}
+body.print-ready #report-preview {
+  display: block !important;
+}
+.report-preview {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: white;
+  box-shadow: none;
+}
+.report-header {
+  break-inside: avoid;
+  border-bottom: 2px solid #315fc1;
+}
+.report-header h2 {
+  font-size: 20pt;
+}
+.report-section h3 {
+  break-after: avoid;
+  font-size: 12pt;
+}
+.report-section dl {
+  grid-template-columns: 1fr 2fr;
+}
+.report-section li,
+.report-section dl,
+.report-summary,
+.report-footnote {
+  break-inside: avoid;
+}
+.report-document {
+  font-size: 9pt;
+  line-height: 1.6;
+}
+.report-section {
+  margin-top: 18pt;
+}
+.report-document p,
+.report-document dt,
+.report-document li {
+  color: #45516a;
+}
+.report-document dd {
+  color: #182237;
+}
+.report-summary {
+  background: #f1f4fc !important;
+  print-color-adjust: exact;
+}
+.report-stamp {
+  text-align: right;
+}
+.report-header {
+  flex-direction: row;
+}
+.report-document a {
+  color: #182237;
+  text-decoration: none;
+}
+body:not(.print-ready):after {
+  content: 'No current report is available. Generate a report in PassGuard before printing.';
+  display: block;
+  padding: 20px;
+  color: #182237;
+  font-size: 12pt;
+}

@@ -1,0 +1,556 @@
+{
+  "runAt": "2026-10-17T12:04:19.418Z",
+  "environment": "Firefox headless / Playwright",
+  "browserVersion": "157.0",
+  "hostPlatform": "linux",
+  "nodeVersion": "v20.20.2",
+  "capabilities": {
+    "clipboardSuccess": "Mocked Clipboard API boundary; native Firefox clipboard permissions remain manual",
+    "print": "Mocked window.print invocation and real print-media stylesheet checks",
+    "headlessPdfBytes": null,
+    "nativePrintDialog": "Not tested",
+    "actualKaliFirefoxESR": "Not tested; host is the Arena Linux sandbox"
+  },
+  "baseUrl": "http://localhost:3000",
+  "checks": [
+    {
+      "name": "initial dashboard: honest empty state and no external requests",
+      "status": "passed"
+    },
+    {
+      "name": "all ten navigation destinations and browser history",
+      "status": "passed"
+    },
+    {
+      "name": "keyboard skip link preserves each current section and focuses main content",
+      "status": "passed"
+    },
+    {
+      "name": "theme toggle and password visibility are accessible and functional",
+      "status": "passed"
+    },
+    {
+      "name": "analysis, character statistics, common checks and shared score",
+      "status": "passed"
+    },
+    {
+      "name": "stale analysis and report are hidden immediately on input change",
+      "status": "passed"
+    },
+    {
+      "name": "attack scenarios show finite estimates and validate editable rates",
+      "status": "passed"
+    },
+    {
+      "name": "generator length, categories, analysis integration and clear",
+      "status": "passed"
+    },
+    {
+      "name": "clipboard success (mocked Firefox boundary) and denied-write manual fallback",
+      "status": "passed"
+    },
+    {
+      "name": "reset rejects late clipboard callbacks even after a new password is generated",
+      "status": "passed"
+    },
+    {
+      "name": "HTML-like password input remains data and cannot inject markup or a report credential",
+      "status": "passed"
+    },
+    {
+      "name": "explicit breach success and exact five-character request privacy",
+      "status": "passed"
+    },
+    {
+      "name": "mocked negative, network failure, rate limit and malformed breach states",
+      "status": "passed"
+    },
+    {
+      "name": "cancel and changed-input races discard late breach responses",
+      "status": "passed"
+    },
+    {
+      "name": "report preview, real HTML/text downloads, privacy and clear report",
+      "status": "passed"
+    },
+    {
+      "name": "print invocation (mocked) and report-only stylesheet; Firefox PDF/dialog remains manual",
+      "status": "passed"
+    },
+    {
+      "name": "WCAG A/AA automated scans: all ten populated views in both themes",
+      "status": "passed"
+    },
+    {
+      "name": "responsive layouts: every section at 320, 360, 390, 768, 1024 and 1440 pixels",
+      "status": "passed"
+    },
+    {
+      "name": "mobile drawer, keyboard Escape, focus management and theme",
+      "status": "passed"
+    },
+    {
+      "name": "reset clears sensitive controls, masks inputs and removes assessments/reports",
+      "status": "passed"
+    },
+    {
+      "name": "missing Web Crypto fails closed while analysis and reporting remain available",
+      "status": "passed"
+    },
+    {
+      "name": "clean application logs, references, storage and network boundaries",
+      "status": "passed"
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "breachRequests": "Mocked only; no live breach API requests",
+  "requestPrivacy": {
+    "observedRequestCount": 7,
+    "fiveHexPrefixOnly": true,
+    "getOnly": true,
+    "requestBodiesAbsent": true,
+    "plaintextTransmitted": false,
+    "completeHashTransmitted": false,
+    "paddingRequested": true,
+    "referrerCookieOrAuthorizationObserved": false
+  },
+  "accessibilityScans": [
+    {
+      "label": "empty overview",
+      "violations": 0
+    },
+    {
+      "label": "light empty overview",
+      "violations": 0
+    },
+    {
+      "label": "dark/overview",
+      "violations": 0
+    },
+    {
+      "label": "dark/analyzer",
+      "violations": 0
+    },
+    {
+      "label": "dark/generator",
+      "violations": 0
+    },
+    {
+      "label": "dark/resistance",
+      "violations": 0
+    },
+    {
+      "label": "dark/common",
+      "violations": 0
+    },
+    {
+      "label": "dark/breach",
+      "violations": 0
+    },
+    {
+      "label": "dark/recommendations",
+      "violations": 0
+    },
+    {
+      "label": "dark/report",
+      "violations": 0
+    },
+    {
+      "label": "dark/tips",
+      "violations": 0
+    },
+    {
+      "label": "dark/privacy",
+      "violations": 0
+    },
+    {
+      "label": "light/overview",
+      "violations": 0
+    },
+    {
+      "label": "light/analyzer",
+      "violations": 0
+    },
+    {
+      "label": "light/generator",
+      "violations": 0
+    },
+    {
+      "label": "light/resistance",
+      "violations": 0
+    },
+    {
+      "label": "light/common",
+      "violations": 0
+    },
+    {
+      "label": "light/breach",
+      "violations": 0
+    },
+    {
+      "label": "light/recommendations",
+      "violations": 0
+    },
+    {
+      "label": "light/report",
+      "violations": 0
+    },
+    {
+      "label": "light/tips",
+      "violations": 0
+    },
+    {
+      "label": "light/privacy",
+      "violations": 0
+    },
+    {
+      "label": "mobile generator",
+      "violations": 0
+    }
+  ],
+  "responsiveCases": [
+    {
+      "width": 320,
+      "view": "overview",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "analyzer",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "generator",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "resistance",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "common",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "breach",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "recommendations",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "report",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "tips",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "view": "privacy",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "overview",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "analyzer",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "generator",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "resistance",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "common",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "breach",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "recommendations",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "report",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "tips",
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "view": "privacy",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "overview",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "analyzer",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "generator",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "resistance",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "common",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "breach",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "recommendations",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "report",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "tips",
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "view": "privacy",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "overview",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "analyzer",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "generator",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "resistance",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "common",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "breach",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "recommendations",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "report",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "tips",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "view": "privacy",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "overview",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "analyzer",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "generator",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "resistance",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "common",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "breach",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "recommendations",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "report",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "tips",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "view": "privacy",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "overview",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "analyzer",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "generator",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "resistance",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "common",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "breach",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "recommendations",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "report",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "tips",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "view": "privacy",
+      "overflow": false
+    }
+  ],
+  "browserDiagnostics": {
+    "uncaughtJavaScriptErrors": 0,
+    "unexpectedConsoleErrors": 0,
+    "expectedMockedNetworkConsoleMessages": 1,
+    "failedLocalFileResponses": 0,
+    "unexpectedExternalRequests": 0
+  },
+  "expectedConsoleDiagnostics": [
+    {
+      "kind": "Expected browser diagnostic from deliberately aborted mock breach request"
+    }
+  ],
+  "buttonCoverage": {
+    "clickedActions": [
+      "analyze",
+      "analyze-generated",
+      "cancel-breach",
+      "check-breach",
+      "clear-generated",
+      "clear-report",
+      "copy-generated",
+      "export-html",
+      "export-text",
+      "generate",
+      "generate-report",
+      "local-check",
+      "print-report",
+      "reset",
+      "reset-rates",
+      "update-rates"
+    ],
+    "exercisedControls": [
+      "sidebar-backdrop",
+      "sidebar-close",
+      "sidebar-toggle",
+      "skip-link",
+      "theme-toggle",
+      "visibility:analyzer-password",
+      "visibility:dashboard-password"
+    ]
+  },
+  "accessibility": "axe-core WCAG 2 A/AA and 2.1 A/AA scans; not a manual accessibility certification"
+}
